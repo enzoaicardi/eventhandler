@@ -1,0 +1,56 @@
+{
+    "name": "@enzoaicardi/eventhandler",
+    "type": "module",
+    "version": "1.2.0",
+    "description": "A ridiculously small layer for using promises in template literals",
+    "homepage": "https://github.com/enzoaicardi/eventhandler",
+    "bugs": "https://github.com/enzoaicardi/eventhandler/issues",
+    "author": {
+        "name": "Enzo Aicardi",
+        "url": "https://enzo.aicardi.pro"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/enzoaicardi/eventhandler"
+    },
+    "main": "./esm/eventhandler.js",
+    "module": "./esm/eventhandler.js",
+    "browser": "./esm/eventhandler.js",
+    "types": "./index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./index.d.ts",
+            "require": "./cjs/eventhandler.cjs",
+            "import": "./esm/eventhandler.js",
+            "browser": "./esm/eventhandler.js",
+            "default": "./esm/eventhandler.js"
+        },
+        "./esm": {
+            "types": "./index.d.ts",
+            "default": "./esm/eventhandler.js"
+        },
+        "./cjs": {
+            "types": "./index.d.ts",
+            "default": "./cjs/eventhandler.cjs"
+        },
+        "./umd": {
+            "types": "./index.d.ts",
+            "default": "./umd/eventhandler.js"
+        },
+        "./iife": {
+            "types": "./index.d.ts",
+            "default": "./iife/eventhandler.js"
+        }
+    },
+    "keywords": [
+        "javascript",
+        "templateliteral",
+        "taggedtemplate",
+        "taggedliteral",
+        "tagfunction"
+    ],
+    "scripts": {
+        "test": "echo \"No test specified\""
+    },
+    "license": "GPL-3.0-only"
+}
