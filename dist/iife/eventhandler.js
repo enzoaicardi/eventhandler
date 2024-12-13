@@ -1,1 +1,1 @@
-var eventhandler=function(t){"use strict";class n{static t(t){this["handle"+t.type](t)}context;constructor(t){this.context=t}t=n.t}return t.h=n,t}({});
+var eventhandler=function(t){"use strict";class n{static handleEvent(t){this["handle"+t.type](t)}context;constructor(t){this.context=t}handleEvent=n.handleEvent}return t.t=n,t}({});
