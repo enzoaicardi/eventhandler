@@ -1,1 +1,1 @@
-class t{static handleEvent(t){this["handle"+t.type](t)}context;constructor(t){this.context=t}handleEvent=t.handleEvent}export{t as EventHandler};
+class t{t;context;constructor(...t){this.t=t[0],this.context=t[1]}handleEvent(t){this.t(t,this.context)}}export{t as EventHandler};

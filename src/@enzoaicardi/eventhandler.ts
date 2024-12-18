@@ -1,24 +1,34 @@
-/**
- * class which captures any type of DOM Event
- * and calls the matching prototype method
- */
-export class EventHandler<T> {
-    /**
-     * standard Object method to handle Event
-     * @param {Event} event DOM Event
-     */
-    static handleEvent(event: Event): void {
-        // call the matching method
-        // "click" -> handleclick(event)
-        this["handle" + event.type](event);
+type EventHandlerCallback<EventType extends Event, ContextType> = (
+    event: EventType,
+    context: ContextType
+) => unknown;
+
+type EventHandlerParametters<
+    EventType extends Event,
+    ContextType
+> = ContextType extends undefined
+    ? [
+          callback: EventHandlerCallback<EventType, ContextType>,
+          context?: ContextType
+      ]
+    : [
+          callback: EventHandlerCallback<EventType, ContextType>,
+          context: ContextType
+      ];
+
+export class EventHandler<
+    EventType extends Event = Event,
+    ContextType = undefined
+> {
+    callback: EventHandlerCallback<EventType, ContextType>;
+    context: ContextType;
+
+    constructor(...args: EventHandlerParametters<EventType, ContextType>) {
+        this.callback = args[0];
+        this.context = args[1] as ContextType;
     }
 
-    /** @type {T} arbitrary value */
-    context: T;
-
-    constructor(context: T) {
-        this.context = context;
+    handleEvent(event: EventType) {
+        this.callback(event, this.context);
     }
-
-    handleEvent = EventHandler.handleEvent;
 }

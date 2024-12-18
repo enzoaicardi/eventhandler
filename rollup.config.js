@@ -25,7 +25,7 @@ export default formats.map(function (format) {
             terser({
                 mangle: {
                     properties: {
-                        reserved: ["context", "handleEvent"],
+                        reserved: ["handleEvent", "context"],
                     },
                 },
             }),
