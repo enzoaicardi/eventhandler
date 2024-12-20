@@ -1,1 +1,1 @@
-var eventhandler=function(t){"use strict";return t.t=class{h;context;constructor(...t){this.h=t[0],this.context=t[1]}handleEvent(t){this.h(t,this.context)}},t}({});
+var eventhandler=function(t){"use strict";class s{static t=Symbol();static i=Symbol()}return t.l=class{[s.t];[s.i];constructor(...t){this[s.t]=t[0],this[s.i]=t[1]}handleEvent(t){this[s.t](t,this[s.i])}},t}({});

@@ -1,1 +1,1 @@
-"use strict";exports.EventHandler=class{t;context;constructor(...t){this.t=t[0],this.context=t[1]}handleEvent(t){this.t(t,this.context)}};
+"use strict";class t{static t=Symbol();static i=Symbol()}exports.EventHandler=class{[t.t];[t.i];constructor(...s){this[t.t]=s[0],this[t.i]=s[1]}handleEvent(s){this[t.t](s,this[t.i])}};

@@ -2,15 +2,12 @@
 
 type EventHandlerCallback<EventType extends Event, ContextType> = (event: EventType, context: ContextType) => unknown;
 type EventHandlerParametters<EventType extends Event, ContextType> = ContextType extends undefined ? [
-	callback: EventHandlerCallback<EventType, ContextType>,
-	context?: ContextType
+	callback: EventHandlerCallback<EventType, ContextType>
 ] : [
 	callback: EventHandlerCallback<EventType, ContextType>,
 	context: ContextType
 ];
 export declare class EventHandler<EventType extends Event = Event, ContextType = undefined> {
-	callback: EventHandlerCallback<EventType, ContextType>;
-	context: ContextType;
 	constructor(...args: EventHandlerParametters<EventType, ContextType>);
 	handleEvent(event: EventType): void;
 }
